@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M5.A21.E1. - Mercado Restrito (cópia do mercado livre)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            grid-area: header;
+            background-color: yellow; /* só pra visualizar melhor */
+            padding: 10px;
+        }
+        nav{
+            grid-area: nav;
+        }
+        main{
+            grid-area: main;
+        }
+        footer{
+            grid-area: footer;
+        }
+        #content1{
+            grid-area: content1;
+        }
+        #content2{
+            grid-area: content2;
+        }
+        #content3{
+            grid-area: content3;
+        }
+        #content4{
+            grid-area: content4;
+        }
+        #content5{
+            grid-area: content5;
+        }
+        #content6{
+            grid-area: content6;
+        }
+        #content7{
+            grid-area: content7;
+        }
+        #content8{
+            grid-area: content8;
+        }
+        #content9{
+            grid-area: content9;
+        }
+        .grid {
+            display: grid;
+            grid-template-areas:
+                "header header header"
+                "nav    nav    nav"
+                "main   main   main"
+                "footer footer footer";
+            grid-template-columns: 1fr;
+            grid-template-rows: auto 1fr auto;
+            min-height: 100vh;
+            width: 100%;
+        }
+        .grid2 {
+            display: grid;
+            grid-template-areas:
+                "content1 content2 content3"
+                "content4 content5 content6"
+                "content7 content8 content9"
+                "nav      nav      nav";
+            grid-template-columns: var(--col-side) 1fr var(--col-side);
+            grid-template-rows: auto 1fr auto;
+            gap: var(--gap);
+            min-height: 100vh;
+            min-width: none;
+            margin: 3 auto;
+        }
+        .box{
+            display: flex;
+            /* flex-basis: 100px;
+            flex-grow: 1;
+            flex-shrink: 1; */
+            flex: 1 1 100px;
+            margin: 5px;
+            color: white;
+            font-weight: bold;
+            text-align: left;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 15px;
+        }
+        .nav-search-input {
+            width: 400px;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <header>
+            <div class="box">
+                <figure><img src="a-modern-logo-design-for-an-e-commerce-w_FeK3R0AzQtmzd7w8HftfHQ_jLz3nskNTDy0s8wyG6kxaQ.jpeg" height="100vh"></figure><input type="text" class="nav-search-input" placeholder="Buscar produtos, marcas e muito mais…">
+            </div>
+            <div class="box">
+                <figure><img src="a-modern-logo-design-for-an-e-commerce-w_FeK3R0AzQtmzd7w8HftfHQ_jLz3nskNTDy0s8wyG6kxaQ.jpeg" height="100vh"></figure><input type="text" class="nav-search-input" placeholder="Buscar produtos, marcas e muito mais…">
+            </div>
+        </header>
+
+        <nav>
+
+        </nav>
+
+        <main>
+            <aside>
+                <div>
+
+                </div>
+            </aside>
+            <section>
+                <div>
+                    <div>
+
+                    </div>
+                    <nav>
+
+                    </nav>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+
+        </footer>
+    </div>
+</body>
+</html>

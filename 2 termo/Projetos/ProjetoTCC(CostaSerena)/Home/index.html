@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Costa Serena | Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.svg" alt="Logo Costa Serena" width="190">
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html" class="navbarBtn">Home</a></li>
+                <li><a href="sobre.html" class="navbarBtn">All Inclusive</a></li>
+                <li><a href="destinos.html" class="navbarBtn">Mapa</a></li>
+                <li><a href="contato.html" class="navbarBtn">Eventos & Promoções</a></li>
+                <li><a href="contato.html" class="navbarBtn">Sobre</a></li>
+                <li><a href="contato.html" class="reservaCta">Reservar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="video-banner">
+        <video autoplay loop muted playsinline class="background-video">
+            <source src="videobanner.mp4" type="video/mp4">
+            Seu navegador não suporta vídeo.
+        </video>
+
+        <div class="banner-card">
+            <div class="card-header">
+                <img src="logo.svg" alt="Logo Costa Serena Branca" width="190">
+                <span class="slogan">Seu refúgio de paz!</span>
+            </div>
+            <p class="card-paragrafo">
+                Descubra o paraíso do seu próximo feriado. Relaxe nas piscinas e desfrute do nosso serviço
+                <strong>All-Inclusive</strong>. A experiência perfeita espera por você.
+            </p>
+            <a href="contato.html" class="reservaCta cta-card">Reservar Agora</a>
+        </div>
+    </section>
+
+    <section class="cards-section">
+        <div class="card-row">
+            <div class="card-image"><img src="img1.jpg" alt="Imagem 1"></div>
+            <div class="card-text">
+                <h2>Momentos que viram memórias</h2>
+                <p>Risos, sol e tranquilidade. Aqui, cada instante em família se transforma em lembrança — das
+                    brincadeiras à beira da piscina às noites estreladas no deck. O Costa Serena é o cenário perfeito
+                    pra viver o que realmente importa.</p>
+            </div>
+        </div>
+
+        <div class="card-row">
+            <div class="card-text">
+                <h2>Suítes pensadas para o seu descanso</h2>
+                <p>Varandas amplas, vista para o mar e todo o conforto que você merece. Relaxe com uma bebida especial
+                    enquanto o som das ondas embala o fim de tarde — o descanso que você sempre sonhou está aqui.</p>
+            </div>
+            <div class="card-image"><img src="img2.jpg" alt="Imagem 2"></div>
+        </div>
+
+        <div class="card-row">
+            <div class="card-image"><img src="img3.jpg" alt="Imagem 3"></div>
+            <div class="card-text">
+                <h2>Sabores que contam histórias</h2>
+                <p>Experimente o melhor da gastronomia à beira-mar com nosso serviço All Inclusive. De lagostas frescas
+                    a drinques exclusivos, cada prato é preparado pra transformar sua estadia em uma verdadeira viagem
+                    de sabores.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="reserva-section">
+        <div class="reserva-container">
+            <div class="calendario">
+                <h3>Calendário</h3>
+                <div class="placeholder">Calendário do mês atual</div>
+            </div>
+
+            <div class="opcoes">
+                <h3>Opções de Reserva</h3>
+                <p>Escolha sua melhor data e aproveite as condições exclusivas!</p>
+
+                <form id="formReserva">
+                    <div class="form-group">
+                        <label for="checkin">Check-in</label>
+                        <input type="date" id="checkin" name="checkin" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="checkout">Check-out</label>
+                        <input type="date" id="checkout" name="checkout" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adultos">Adultos</label>
+                        <select id="adultos" name="adultos">
+                            <option value="1">1 adulto</option>
+                            <option value="2">2 adultos</option>
+                            <option value="3">3 adultos</option>
+                            <option value="4">4 adultos</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="criancas">Crianças</label>
+                        <select id="criancas" name="criancas">
+                            <option value="0">0 criança</option>
+                            <option value="1">1 criança</option>
+                            <option value="2">2 crianças</option>
+                            <option value="3">3 crianças</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="reservaCta">Confirmar Reserva</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-nav">
+                <a href="#">Navegação</a>
+            </div>
+            <div class="footer-info">
+                <a href="#">Endereço</a>
+                <a href="#">Redes Sociais</a>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <p>© 2025 Costa Serena. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

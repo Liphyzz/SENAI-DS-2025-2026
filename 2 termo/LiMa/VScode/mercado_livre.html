@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+
+<html lang="pt‑BR">
+
+<head>
+
+<meta charset="UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Mercado Livre - Ofertas</title>
+
+<style>
+
+/* Reset básico */
+
+* {
+
+box-sizing: border-box;
+
+margin: 0;
+
+padding: 0;
+
+}
+
+body {
+
+font-family: Arial, sans-serif;
+
+background-color: #eee;
+
+color: #333;
+
+}
+
+a {
+
+text-decoration: none;
+
+color: inherit;
+
+}
+
+/* Cabeçalho amarelo */
+
+header {
+
+background: #ffe600;
+
+padding: 10px 20px;
+
+}
+
+.top-bar {
+
+display: flex;
+
+align-items: center;
+
+justify-content: space-between;
+
+}
+
+.top-bar .logo {
+
+display: flex;
+
+align-items: center;
+
+gap: 8px;
+
+}
+
+.top-bar .logo img {
+
+height: 30px;
+
+}
+
+.top-bar .search {
+
+flex-grow: 1;
+
+margin: 0 20px;
+
+position: relative;
+
+}
+
+.top-bar .search input {
+
+width: 100%;
+
+padding: 8px 45px 8px 15px;
+
+border: none;
+
+border-radius: 4px;
+
+font-size: 14px;
+
+}
+
+.top-bar .search button {
+
+position: absolute;
+
+right: 5px;
+
+top: 50%;
+
+transform: translateY(-50%);
+
+border: none;
+
+background: none;
+
+cursor: pointer;
+
+}
+
+.top-bar .search button svg {
+
+width: 20px;
+
+height: 20px;
+
+fill: #666;
+
+}
+
+.top-bar .plans {
+
+background: black;
+
+color: white;
+
+font-size: 12px;
+
+padding: 4px 8px;
+
+border-radius: 20px;
+
+display: flex;
+
+align-items: center;
+
+gap: 6px;
+
+}
+
+.top-bar .plans img {
+
+height: 14px;
+
+}
+
+/* Menu principal abaixo */
+
+nav.main-menu {
+
+margin-top: 8px;
+
+display: flex;
+
+justify-content: space-between;
+
+font-size: 14px;
+
+}
+
+nav.main-menu .left,
+
+nav.main-menu .right {
+
+display: flex;
+
+gap: 18px;
+
+align-items: center;
+
+}
+
+nav.main-menu .left a,
+
+nav.main-menu .right a {
+
+color: #333;
+
+cursor: pointer;
+
+position: relative;
+
+}
+
+nav.main-menu .left a:hover,
+
+nav.main-menu .right a:hover {
+
+text-decoration: underline;
+
+}
+
+nav.main-menu .left .categorias {
+
+display: flex;
+
+align-items: center;
+
+gap: 4px;
+
+}
+
+nav.main-menu .left .categorias::after {
+
+content: "▼";
+
+font-size: 10px;
+
+margin-left: 2px;
+
+}
+
+nav.main-menu .left .mercado-play {
+
+background: #00cc00;
+
+font-size: 10px;
+
+font-weight: bold;
+
+color: white;
+
+padding: 2px 5px;
+
+border-radius: 3px;
+
+margin-left: 3px;
+
+}
+
+nav.main-menu .right .cart-icon {
+
+display: flex;
+
+align-items: center;
+
+}
+
+nav.main-menu .right .cart-icon svg {
+
+width: 20px;
+
+height: 20px;
+
+fill: #333;
+
+}
+
+/* Seção ofertas do dia */
+
+section.ofertas-top {
+
+background: white;
+
+padding: 20px 40px;
+
+}
+
+.ofertas-top h2 {
+
+font-weight: bold;
+
+font-size: 22px;
+
+margin-bottom: 4px;
+
+}
+
+.ofertas-top p {
+
+font-size: 14px;
+
+color: #666;
+
+margin-bottom: 16px;
+
+}
+
+/* Filtros (ícones) */
+
+.filtros {
+
+display: flex;
+
+gap: 40px;
+
+justify-content: center;
+
+margin-bottom: 20px;
+
+}
+
+.filtros .filtro {
+
+text-align: center;
+
+font-size: 12px;
+
+color: #666;
+
+cursor: pointer;
+
+}
+
+.filtros .filtro.active {
+
+color: #1976d2;
+
+font-weight: bold;
+
+}
+
+.filtros .filtro .icon {
+
+font-size: 28px;
+
+margin-bottom: 6px;
+
+display: block;
+
+color: inherit;
+
+}
+
+.filtros .filtro.active .icon {
+
+color: #1976d2;
+
+}
+
+/* Área principal flex (menu lateral + produtos) */
+
+main.container {
+
+display: flex;
+
+gap: 30px;
+
+padding: 0 40px 40px 40px;
+
+}
+
+/* Menu lateral categorias */
+
+aside.menu-lateral {
+
+width: 240px;
+
+background: white;
+
+padding: 20px;
+
+border-radius: 6px;
+
+font-size: 13px;
+
+color: #333;
+
+}
+
+aside.menu-lateral h3 {
+
+font-weight: bold;
+
+margin-bottom: 12px;
+
+}
+
+aside.menu-lateral p {
+
+font-size: 12px;
+
+color: #666;
+
+margin-bottom: 20px;
+
+}
+
+aside.menu-lateral ul {
+
+list-style: none;
+
+max-height: 420px;
+
+overflow-y: auto;
+
+padding-right: 6px;
+
+}
+
+aside.menu-lateral ul li {
+
+margin-bottom: 10px;
+
+cursor: pointer;
+
+color: #666;
+
+}
+
+aside.menu-lateral ul li:hover {
+
+color: #1976d2;
+
+}
+
+aside.menu-lateral .promo-type {
+
+margin-bottom: 20px;
+
+}
+
+aside.menu-lateral .promo-type a {
+
+color: #666;
+
+font-size: 13px;
+
+cursor: pointer;
+
+display: block;
+
+margin: 4px 0;
+
+}
+
+aside.menu-lateral .promo-type a:hover {
+
+color: #1976d2;
+
+text-decoration: underline;
+
+}
+
+/* Produtos grid */
+
+section.produtos {
+
+flex-grow: 1;
+
+display: grid;
+
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+gap: 20px;
+
+}
+
+/* Cards produtos */
+
+.product-card {
+
+background: white;
+
+border-radius: 6px;
+
+padding: 12px;
+
+box-shadow: 0 0 8px #ddd;
+
+font-size: 14px;
+
+display: flex;
+
+flex-direction: column;
+
+justify-content: space-between;
+
+}
+
+.product-card img {
+
+border-radius: 6px;
+
+width: 100%;
+
+height: auto;
+
+margin-bottom: 10px;
+
+}
+
+.product-card .tag-oferta {
+
+background-color: #1976d2;
+
+color: white;
+
+font-weight: 600;
+
+font-size: 10px;
+
+padding: 3px 6px;
+
+border-radius: 3px;
+
+margin-bottom: 6px;
+
+display: inline-block;
+
+}
+
+.product-card h3 {
+
+font-size: 14px;
+
+margin-bottom: 6px;
+
+line-height: 1.2em;
+
+height: 2.4em;
+
+/* 2 linhas */
+
+overflow: hidden;
+
+}
+
+.product-card .rating {
+
+color: #1976d2;
+
+font-weight: 600;
+
+margin-bottom: 10px;
+
+}
+
+.product-card .price-old {
+
+text-decoration: line-through;
+
+color: #999;
+
+font-size: 13px;
+
+}
+
+.product-card .price-current {
+
+font-weight: 700;
+
+font-size: 18px;
+
+margin-left: 2px;
+
+}
+
+.product-card .off-badge {
+
+background: #0b5;
+
+color: #fff;
+
+font-weight: 600;
+
+font-size: 10px;
+
+padding: 2px 6px;
+
+border-radius: 3px;
+
+margin-left: 6px;
+
+}
+
+.product-card .installment {
+
+font-size: 13px;
+
+color: #0b5;
+
+margin-top: 4px;
+
+}
+
+.product-card .benefits {
+
+margin-top: 8px;
+
+display: flex;
+
+flex-wrap: wrap;
+
+gap: 6px;
+
+}
+
+.benefits span {
+
+font-size: 11px;
+
+padding: 3px 6px;
+
+border-radius: 3px;
+
+font-weight: 700;
+
+}
+
+.benefits .frete {
+
+background: #0b5;
+
+color: white;
+
+}
+
+.benefits .cupom {
+
+background: #acd6ff;
+
+color: #007bff;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="top-bar">
+
+<div class="logo">
+
+<img src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.20.6/mercadolivre/logo__large_plus.png"
+
+alt="Mercado Livre" />
+
+<div>Informe seu CEP</div>
+
+</div>
+
+<div class="search">
+
+<input type="text" placeholder="Buscar produtos, marcas e muito mais..." />
+
+<button aria-label="Buscar">
+
+<svg viewBox="0 0 24 24">
+
+<path
+
+d="M15.5 14h-.79l-.28-.27a6.471 6.471 0 001.48-5.34C15.18 6.28 12.9 4 9.99 4 7.07 4 4.79 6.28 4.79 9.2s2.28 5.2 5.2 5.2c1.29 0 2.46‑.5 3.35‑1.31l.27.28v.79l5 4.99L20.49 19l‑4.99‑5z" />
+
+</svg>
+
+</button>
+
+</div>
+
+<div class="plans">
+
+<img src="https://http2.mlstatic.com/resources/frontend/ui/logo-meli-plus.svg" alt="meli+ MEGA" />
+
+<span>Por apenas: R$ 39,90/mês</span>
+
+</div>
+
+</div>
+
+<nav class="main-menu">
+
+<div class="left">
+
+<a class="categorias" href="#">Categorias</a>
+
+<a href="#">Ofertas</a>
+
+<a href="#">Cupons</a>
+
+<a href="#">Supermercado</a>
+
+<a href="#">Moda</a>
+
+<a href="#">Mercado Play <span class="mercado-play">GRÁTIS</span></a>
+
+<a href="#">Vender</a>
+
+<a href="#">Contato</a>
+
+</div>
+
+<div class="right">
+
+<a href="#">Crie a sua conta</a>
+
+<a href="#">Entre</a>
+
+<a href="#">Compras</a>
+
+<a class="cart-icon" href="#">
+
+<svg viewBox="0 0 24 24">
+
+<path
+
+d="M7 18c‑1.104 0‑1.99.896‑1.99 2s.886 2 1.99 2 2‑.896 2‑2‑.896‑2‑2‑2zm10 0c‑1.104 0‑1.99.896‑1.99 2s.886 2 1.99 2 2‑.896 2‑2‑.896‑2‑2‑2zm‑11.15‑3h12.597l1.45‑6.25H6.81l‑.96‑4.68H2v2h2l3.6 7.59‑1.35 2.44C6.52 17.37 6 18 6 18z" />
+
+</svg>
+
+</a>
+
+</div>
+
+</nav>
+
+</header>
+
+<section class="ofertas-top">
+
+<h2>Ofertas do dia</h2>
+
+<p>Aproveite esses preços agora mesmo! Novas ofertas todos os dias.</p>
+
+<div class="filtros">
+
+<div class="filtro active" title="Todas as ofertas">
+
+<span class="icon">%</span><br />
+
+Todas as ofertas
+
+</div>
+
+<div class="filtro" title="Ofertas relâmpago">
+
+<span class="icon">⚡</span><br />
+
+Ofertas relâmpago
+
+</div>
+
+<div class="filtro" title="Preços Imbatíveis">
+
+<span class="icon">$</span><br />
+
+Preços Imbatíveis
+
+</div>
+
+<div class="filtro" title="Outlet">
+
+<span class="icon">🛍️</span><br />
+
+Outlet
+
+</div>
+
+<div class="filtro" title="Black Friday">
+
+<span class="icon">🔥</span><br />
+
+Black Friday
+
+</div>
+
+<div class="filtro" title="Hering">
+
+<span class="icon">✔️</span><br />
+
+Hering
+
+</div>
+
+</div>
+
+</section>
+
+<main class="container">
+
+<aside class="menu-lateral">
+
+<p><strong>Todas</strong><br>10.000 produtos</p>
+
+<div class="promo-type">
+
+<strong>Tipo de promoção</strong>
+
+<a href="#">Oferta do dia (43)</a>
+
+<a href="#">Oferta relâmpago (40)</a>
+
+</div>
+
+<div class="categories">
+
+<strong>Categorias</strong>
+
+<ul>
+
+<li>Acessórios para Veículos (1536)</li>
+
+<li>Agro (351)</li>
+
+<li>Alimentos e Bebidas (320)</li>
+
+<li>Arte, Papelaria e Armarinho (204)</li>
+
+<li>Bebês (133)</li>
+
+<li>Beleza e Cuidado Pessoal (557)</li>
+
+<li>Brinquedos e Hobbies (320)</li>
+
+<li>Calçados, Roupas e Bolsas (1603)</li>
+
+<li>Casa, Móveis e Decoração (2893)</li>
+
+<li>Celulares e Telefones (461)</li>
+
+<li>Construção (801)</li>
+
+<li>Câmeras e Acessórios (58)</li>
+
+<li>Eletrodomésticos (1465)</li>
+
+<li>Eletrônicos, Áudio e Vídeo (561)</li>
+
+<li>Esportes e Fitness (1747)</li>
+
+<li>Ferramentas (1044)</li>
+
+<li>Festes e Lembrancinhas (58)</li>
+
+<li>Games (87)</li>
+
+<li>Indústria e Comércio (574)</li>
+
+<li>Informática (1073)</li>
+
+<li>Instrumentos Musicais (145)</li>
+
+<li>Joias e Relógios (131)</li>
+
+<li>Livros, Revistas e Comícios (14)</li>
+
+<li>Mais Categorias (14)</li>
+
+<li>Pet Shop (189)</li>
+
+<li>Saúde (717)</li>
+
+</ul>
+
+</div>
+
+<div class="preco">
+
+<strong>Preço</strong>
+
+<p>Até R$ 100 (3825)</p>
+
+<p>R$ 100 a R$ 400 (5499)</p>
+
+<p>Mais de R$ 400 (5158)</p>
+
+<div>
+
+<input type="number" placeholder="Mínimo" style="width: 80px; margin-right: 8px" />
+
+<input type="number" placeholder="Máximo" style="width: 80px;" />
+
+</div>
+
+</div>
+
+</aside>
+
+<section class="produtos">
+
+<!-- Produto 1 -->
+
+<article class="product-card">
+
+<span class="tag-oferta">OFERTA DO DIA</span>
+
+<img src="https://http2.mlstatic.com/D_NQ_NP_2X_639258-MLB82839590542_032025-F-capa-protetora-colcho-box-casal-padro-matelado-impermeavel.webp"
+
+alt="Capa Protetora Colchão Box Casal Padrão Matelado Impermeável" />
+
+<h3>Capa Protetora Colchão Box Casal Padrão Matelado Impermeável</h3>
+
+<div class="rating">★★★★☆ (4.2)</div>
+
+<div>
+
+<span class="price-current">R$ 79,90</span>
+
+<span class="price-old">R$ 109,90</span>
+
+<span class="off-badge">‑27%</span>
+
+</div>
+
+<div class="installment">12x de R$ 6,66 sem juros</div>
+
+<div class="benefits">
+
+<span class="frete">Frete grátis</span>
+
+<span class="cupom">Cupom disponível</span>
+
+</div>
+
+</article>
+
+<!-- Produto 2 -->
+
+<article class="product-card">
+
+<span class="tag-oferta">OFERTA DO DIA</span>
+
+<img src="https://http2.mlstatic.com/D_NQ_NP_2X_610895-MLB94953662389_102025-F-mercado-pago-point-pro-3-maquininha-de-carto-4g-wifi-e-nfc.webp"
+
+alt="Mercado Pago Point Pro 3 Maquininha de Cartão 4G WiFi e NFC" />
+
+<h3>Mercado Pago Point Pro 3 Maquininha de Cartão 4G WiFi e NFC</h3>
+
+<div class="rating">★★★★☆ (4.8)</div>
+
+<div>
+
+<span class="price-current">R$ 135,19</span>
+
+<span class="price-old">R$ 259,99</span>
+
+<span class="off-badge">‑48%</span>
+
+</div>
+
+<div class="installment">4x de R$ 33,80 sem juros</div>
+
+<div class="benefits">
+
+<span class="frete">Chegará grátis amanhã</span>
+
+</div>
+
+</article>
+
+<!-- Produto 3 -->
+
+<article class="product-card">
+
+<span class="tag-oferta">OFERTA DO DIA</span>
+
+<img src="https://http2.mlstatic.com/D_NQ_NP_2X_991140-MLA96127214165_102025-F.webp"
+
+alt="Whey Protein 100% Concentrado Refil 900g Sabor Cookies – FTW" />
+
+<h3>Whey Protein 100% Concentrado Refil 900g Sabor Cookies – FTW</h3>
+
+<div class="rating">★★★★☆ (4.8)</div>
+
+<div>
+
+<span class="price-current">R$ 77,50</span>
+
+<span class="price-old">R$ 216,99</span>
+
+<span class="off-badge">‑64%</span>
+
+</div>
+
+<div class="installment">12x de R$ 7,63</div>
+
+<div class="benefits">
+
+<span class="frete">Chegará grátis amanhã</span>
+
+<span class="cupom">10% OFF Cartão Mercado Pago</span>
+
+</div>
+
+</article>
+
+</section>
+
+</main>
+
+</body>
+
+</html>

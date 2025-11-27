@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+}
+
+header {
+    background-color: #002f6e;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 4px solid #88b4f0;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+    padding: 10px 50px 10px 10px;
+    background-image: url(background.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.navbar a {
+    color: white;
+    font-size: 18px;
+    transition: all 0.3s ease-in-out;
+    font-weight: 600
+}
+
+.navbarBtn:hover {
+    color: #88b4f0;
+}
+
+.navbarBtn::after {
+    content: '';
+    display: block;
+    margin-top: 2px;
+    width: 0px;
+    height: 3px;
+    border-radius: 20px;
+    background: #88b4f0;
+    transition: width 0.4s ease;
+}
+
+.navbarBtn:hover::after {
+    animation: desliza 0.4s forwards;
+}
+
+@keyframes desliza {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 70%;
+    }
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.reservaCta {
+    background-color: #ff914d;
+    display: block;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-weight: 600;
+    transition: all 0.5s ease-in-out;
+}
+
+.reservaCta:hover {
+    background-color: #e6833f;
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.video-banner {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 107px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    max-width: 4000px;
+    max-height: 4000px;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.video-banner::after {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.5s ease-in-out;
+}
+
+.video-banner:hover::after {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.banner-card {
+    position: relative;
+    z-index: 3;
+    background-color: #002f6e;
+    background-image: url(background.png);
+    padding: 30px 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 600px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    font-weight: 500;
+    margin: 0 auto 25px;
+}
+
+.card-header img {
+    margin-right: 15px;
+    width: 200px;
+}
+
+.slogan {
+    color: white;
+    padding-left: 30px;
+    position: relative;
+}
+
+.slogan::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    border: solid 1px #ff914d;
+    height: 80px;
+    top: -100%;
+}
+
+.card-paragrafo {
+    color: white;
+    text-align: center;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+
+.cta-card {
+    display: inline-block;
+    font-size: 18px;
+}
+
+.cards-section {
+    padding: 80px 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    background-color: #f7f9fc;
+}
+
+.card-row {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card-row:hover {
+    transform: scale(1.02);
+}
+
+.card-image {
+    flex: 1;
+    min-width: 50%;
+    height: 100%;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.card-text {
+    flex: 1;
+    padding: 50px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-text h2 {
+    color: #002f6e;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.card-text p {
+    color: #444;
+    line-height: 1.6;
+    font-size: 1.05em;
+}
+
+.reserva-section {
+    background: #f0f4fa;
+    padding: 80px 120px;
+}
+
+.reserva-container {
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+}
+
+.calendario,
+.opcoes {
+    flex: 1;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.placeholder {
+    background: #e0e7f1;
+    height: calc(100% - 10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: #555;
+    font-style: italic;
+}
+
+footer {
+    background: #002f6e;
+    color: white;
+    padding: 40px 100px 20px;
+    font-size: 14px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.footer-nav a,
+.footer-info a {
+    color: #88b4f0;
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+
+.footer-nav a:hover,
+.footer-info a:hover {
+    color: #ff914d;
+}
+
+.footer-copy {
+    text-align: center;
+    color: #ccc;
+}
+
+.opcoes form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #002f6e;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="date"],
+.form-group select {
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1.5px solid #88b4f0;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-group input[type="date"]:focus,
+.form-group select:focus {
+    border-color: #ff914d;
+    box-shadow: 0 0 5px rgba(255, 145, 77, 0.3);
+}
+
+.opcoes .reservaCta {
+    margin-top: 15px;
+    width: fit-content;
+    align-self: center;
+    padding: 12px 25px;
+}

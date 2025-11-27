@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container{
+    min-height: 100vh;
+}
+
+.barra-lateral{
+    position: fixed;      /* Fixa o aside na tela */
+    left: 0;
+    top: 0;
+    width: 13%;           /* Mantém a mesma proporção */
+    height: 100vh;        /* Altura da tela inteira */
+    
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    box-sizing: border-box;
+}
+
+
+.logo {
+    width: 100%;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    border: 0 0 0 0;
+}
+
+.barra-lateral .logo h2 {
+    margin-top: 0;
+}
+
+.barra-lateral nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.barra-lateral nav ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+    transition: background-color 0.3s;
+}
+
+.barra-lateral nav ul li a:hover, .barra-lateral nav ul li a.active {
+    background-color: #555;
+    padding-left: 10px;
+}
+
+
+.conteudo-principal{
+    margin-left: 13%;     /* Afasta o conteúdo principal para não ficar atrás do aside */
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.relative {
+    position: relative;
+    top: 1px;
+    left: 1px;
+}
+
+main section{
+    display: none;
+}
+
+#overview {
+    display: block;
+}

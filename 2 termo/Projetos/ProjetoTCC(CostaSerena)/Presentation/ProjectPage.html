@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> <!-- Linka o arquivo CSS -->
+    <title>Projeto Costa Serena</title>
+</head>
+<body>
+    <div class="container">
+        <aside class="barra-lateral">
+            <div class="logo">
+                <img src="Logo.png" alt="Logo do Projeto Costa Serena" width="100%">
+                
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="mostrarSecao('overview', event)" class="active">Visão Geral</a></li> <!-- Inclui cronograma, metodologias ageis utilizadas e desempenho de cada membro por etapa do projeto-->
+                    <li><a href="#" onclick="mostrarSecao('mer-der', event)">MER & DER</a></li>
+                    <li><a href="#" onclick="mostrarSecao('BD', event)">Banco de Dados</a></li>
+                    <li><a href="#" onclick="mostrarSecao('sitemap', event)">Site Map</a></li>
+                    <li><a href="#" onclick="mostrarSecao('institution-page', event)">Página Institucional</a></li>
+                    <li><a href="#" onclick="mostrarSecao('mockup-backend', event)">Mockup do Backend</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="conteudo-principal">
+            <section id="overview" class="relative"> <!-- falta adicionar z-index e esconder os que não estão ativos-->
+                <header>
+                    <h1>Projeto Costa Serena</h1>
+                    <h2>Página de Visão Geral para acompanhamento e apresentação</h2>
+                </header>
+
+                <div>
+                    <h2>Descrição do Projeto</h2>
+                    <p>Bem-vindo à página do Projeto Costa Serena. Aqui você encontrará informações detalhadas sobre o andamento do projeto, suas metas e resultados alcançados.</p>
+                </div>
+                <p>Este projeto visa desenvolver uma nova plataforma de gestão de tarefas online. O objetivo é melhorar a eficiência da equipe em 30% até o final do trimestre. Utilizamos metodologias ágeis para o acompanhamento contínuo e a entrega de valor.</p>
+            </section>
+            <section id="mer-der" class="relative">
+                <header>
+                    <h2>MER & DER</h2>
+                </header>
+                <p>Conteúdo relacionado ao Modelo Entidade-Relacionamento (MER) e Diagrama Entidade-Relacionamento (DER) do projeto.</p>
+            </section>
+            <section id="BD" class="relative">
+                <header>
+                    <h2>Banco de Dados</h2>
+                </header>
+                <p>Informações sobre o banco de dados utilizado no projeto, incluindo estrutura, tabelas e relacionamentos.</p>
+            </section>
+            <section id="sitemap" class="relative">
+                <header>
+                    <h2>Site Map</h2>
+                </header>
+                <p>Mapa do site detalhando a estrutura de navegação e hierarquia das páginas do projeto.</p>
+            </section>
+            <section id="institution-page" class="relative">
+                <header>
+                    <h2>Página Institucional</h2>
+                </header>
+                <p>Descrição e detalhes da página institucional do projeto, incluindo missão, visão e valores.</p>
+            </section>
+            <section id="mockup-backend" class="relative">
+                <header>
+                    <h2>Mockup do Backend</h2>
+                </header>
+                <p>Protótipos e mockups do backend do sistema, ilustrando a arquitetura e funcionalidades planejadas.</p>
+            </section>
+        </main>
+
+        <script src="script.js"></script>
+    </div>
+</body>
+</html>
