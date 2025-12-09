@@ -3,7 +3,7 @@
 
 # --Quais são todos os operadores existentes em python?--
 
-#R: Os operadores existentes em Python são:
+# R: Os operadores existentes em Python são:
 # - Aritméticos: +, -, *, /, //, %, **
 # - Relacionais: ==, !=, >, <, >=, <=
 # - Lógicos: and, or, not
